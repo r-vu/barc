@@ -17,23 +17,27 @@ from numpy import sin, cos, tan, arctan, array, dot
 from numpy import sign, argmin, sqrt, abs, pi
 import rospy
 
-def bikeFE(x, y, psi, v, a, d_f, a0,m, Ff, theta, ts):
+def bikeFE(x, y, psi, v, a, d_f, a0, m, Ff, theta, ts):
     """
     process model
     """
     # external parameters
-    l_f                    = TODO
-    l_r                    = TODO
-    g                      = TODO
+    l_f                    = 1.5 # meters
+    l_r                    = 1.5 # meters
+    g                      = 9.8 # m/s^2 standard gravity
 
     # compute slip angle
-    beta         = TODO
+    beta         = arctan((l_r / (l_f + l_r)) * tan(d_f))
+
+    # find external forces
+    F_ext       = -1 * (Ff + (a0 * v * v) + (m * g * sin(theta)))
 
     # compute next state
-    x_next      = TODO 
-    y_next      = TODO
-    psi_next    = TODO
-    v_next      = TODO
+    
+    x_next      = x + ts * (v * cos(psi + beta))
+    y_next      = y + ts * (v * sin(psi + beta))
+    psi_next    = psi + ts * ((v / l_r) * sin(beta))
+    v_next      = v + ts * (a + (F_ext / m))
 
     return array([x_next, y_next, psi_next, v_next])
 

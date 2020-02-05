@@ -15,5 +15,5 @@
     <node pkg="labs" type="vehicle_simulator.py" name="simulator" />
 
     <!-- Record the experiment data -->
-    <node pkg="rosbag" type="record" name="rosbag_record" args="-o /home/me131/ -a" />
+    <node pkg="rosbag" type="record" name="rosbag_record" args="-o /c/Users/Richard/Desktop/classes/me131/ -a" />
 </launch>

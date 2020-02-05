@@ -7,7 +7,7 @@ from matplotlib import animation
 
 length = 1.5*2
 height = 0.9
-bag = rosbag.Bag(os.path.expanduser("~/FILENAMEHERE.bag"))
+bag = rosbag.Bag(os.path.expanduser("/c/Users/Richard/Desktop/classes/me131/_2020-02-04-18-18-06.bag"))
 
 topics = bag.get_type_and_topic_info()[1].keys()
 types = []
