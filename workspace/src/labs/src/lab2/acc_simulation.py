@@ -7,7 +7,7 @@ from matplotlib import animation
 
 length = 1.5*2
 height = 0.9
-bag = rosbag.Bag(os.path.expanduser("/c/Users/Richard/Desktop/classes/me131/_2020-02-04-18-18-06.bag"))
+bag = rosbag.Bag(os.path.expanduser("/d/Documents/classes/me131/_2020-02-10-20-44-36.bag"))
 
 topics = bag.get_type_and_topic_info()[1].keys()
 types = []
@@ -15,6 +15,7 @@ for i in range(0,len(bag.get_type_and_topic_info()[1].values())):
   types.append(bag.get_type_and_topic_info()[1].values()[i][0])
 
   print bag.get_type_and_topic_info()[1].values()[i][0]
+  
 
   if bag.get_type_and_topic_info()[1].values()[i][0] == 'barc/ECU':
     dimEcu = bag.get_type_and_topic_info()[1].values()[i][1]

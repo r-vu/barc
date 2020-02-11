@@ -9,7 +9,7 @@
 
 
     <!-- Controller -->
-    <node pkg="labs" type="controller.py" name="pid" />
+    <node pkg="labs" type="teleop_control.py" name="teleop" />
 
     <!-- Simulator -->
     <node pkg="labs" type="vehicle_simulator.py" name="simulator" />
